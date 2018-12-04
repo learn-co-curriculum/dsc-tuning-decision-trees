@@ -1,16 +1,16 @@
 
-# Hyper Parameter Tuning and Pruning in Decision Trees
+# Hyperparameter Tuning and Pruning in Decision Trees
 
 ## Introduction
 
 Hyperparameter tuning relates to how we sample candidate model architectures from the space of all possible hyperparameter values. This is often referred to as __searching the hyperparameter space for the optimum values__. In this lesson we'll look at some of the key hyper parameters for Decision Trees and how they affect the learning and prediction processes. 
 
 ## Objectives
-- Understand and explain the role of hyper parameter optimization in machine learning
-- IDentify the role of pruning while training a decision tree
+- Understand and explain the role of hyperparameter optimization in machine learning
+- Identify the role of pruning while training a decision tree
 - Understand and explain key pruning parameters that can affect the predictive performance of decision trees
 
-## Hyper-parameter Optimization
+## Hyperparameter Optimization
 
 >__In machine learning, a hyperparameter is a parameter whose value is set before the learning process begins.__
 
@@ -91,13 +91,13 @@ The main difference between the two is that `min_samples_leaf` guarantees a mini
 
 For instance, if `min_samples_split = 5`, and there are 7 samples at an internal node, then the split is allowed. But let's say the split results in two leaves, one with 1 sample, and another with 6 samples. If `min_samples_leaf = 2`, then the split won't be allowed (even if the internal node has 7 samples) because one of the leaves resulted will have less then the minimum number of samples required to be at a leaf node.
 
-### Are there more such hyper-parameters ?
+### Are there more such hyperparameters ?
 
 In addition of above, Scikit Learn offers a number of other parameters for further fine tuning the learning process. [Consult the official doc](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) to look at these parameters in detail. The parameters mentioned here are directly related to the complexity which may arise in decision trees and are normally tuned when growing trees. We shall shortly see this in action with a real dataset. 
 
 ## Additional Resources 
-- [Overview of Hyper-parameter Tuning ](https://cloud.google.com/ml-engine/docs/tensorflow/hyperparameter-tuning-overview)
-- [Demystifying Hyper-parameter Tuning](https://towardsdatascience.com/demystifying-hyper-parameter-tuning-acb83af0258f)
+- [Overview of Hyperparameter Tuning ](https://cloud.google.com/ml-engine/docs/tensorflow/hyperparameter-tuning-overview)
+- [Demystifying Hyperparameter Tuning](https://towardsdatascience.com/demystifying-hyper-parameter-tuning-acb83af0258f)
 - [Pruning Decision Trees](https://www.displayr.com/machine-learning-pruning-decision-trees/)
 
 ## Summary 
