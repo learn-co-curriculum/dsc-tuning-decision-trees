@@ -17,7 +17,7 @@ Hyperparameter tuning relates to how we sample candidate model architectures fro
 By contrast, the values of model parameters are derived via training as we have seen previously.
 Different model training algorithms require different hyperparameters, some simple algorithms (such as ordinary least squares regression) require none. Given these hyperparameters, the training algorithm learns the parameters from the data. For instance, LASSO is an algorithm that adds a regularization hyperparameter to ordinary least squares regression, which has to be set before estimating the parameters through the training algorithm. 
 
-In this lesson we shall look at such optimizations in context of decision trees and see how these can effect the predictive performance as well the computational complexity of the tree. 
+In this lesson we'll look at these sorts of optimizations in context of decision trees and see how these can effect the predictive performance as well the computational complexity of the tree. 
 
 ## Tree Pruning
 
@@ -49,7 +49,7 @@ Reduce the number of leaf nodes
 
 Maximum number of features to consider when splitting a node
 
-Below we shall look at a selected hyper parameters and learn about their impact of the classifier performance. 
+Next, we'll look at a selected few hyperparameters and learn about their impact of the classifier performance. 
 
 
 ## `max_depth`
@@ -58,7 +58,7 @@ The parameter for decision trees that we normally tune first is `max_depth`. Thi
 
 If, on the other hand, the tree is too shallow, we may run into __underfitting__, i.e. we are not learning enough information about the data and the accuracy of model stays low for both test and training samples . We fit a decision tree with depths ranging from 1 to 32 and plot the training and test auc scores.
 
-<img src="depth.png" width=400>
+<img src="images/depth.png" width=400>
 
 
 In above example, we see that as the tree depth increases, our validation/test accuracy starts to go down after a depth of around 4. But with even greater depths, the training accuracy keeps on rising , as the classifer learns more information from the data , but this can not be mapped onto unseen examples, hence the validation accuracy falls down constantly. Finding the sweet spot (e.g. depth=4) in this case would be the first hyper parameter that we need to tune. 
@@ -68,7 +68,7 @@ The hyper parameter `min_samples_split` is used to set the __minimum number of s
 
 When we increase this parameter value, the tree becomes more constrained as it has to consider more samples at each node. Here we will vary the parameter from 10% to 100% of the samples.
 
-<img src="split.png" width=500>
+<img src="images/split.png" width=500>
 
 
 In the above plot, we see that the training and testing accuracy stabilize at certain min. sample split size , and stays the same even if we carry on increasing the size of the split. This means that we will have a complex model, with similar accuracy that a much simpler model could potentially exhibit. Therefore, it is imperative that we try to identify the optimal sample size during the training phase. 
@@ -81,7 +81,7 @@ In the above plot, we see that the training and testing accuracy stabilize at ce
 
 This hyper parameter is used to identify the minimum number of samples that we want a leaf node to contain. When this minimum size is achieved at a node, it does not get split any further.  This parameter is similar to min_samples_splits, however, this describe the minimum number of samples of samples at the leafs, the base of the tree.
 
-<img src="leaf.png" width=400>
+<img src="images/leaf.png" width=400>
 
 
 
@@ -93,7 +93,7 @@ For instance, if `min_samples_split = 5`, and there are 7 samples at an internal
 
 ### Are there more such hyperparameters ?
 
-In addition of above, Scikit Learn offers a number of other parameters for further fine tuning the learning process. [Consult the official doc](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) to look at these parameters in detail. The parameters mentioned here are directly related to the complexity which may arise in decision trees and are normally tuned when growing trees. We shall shortly see this in action with a real dataset. 
+In addition of above, Scikit Learn offers a number of other parameters for further fine tuning the learning process. [Consult the official doc](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) to look at these parameters in detail. The parameters mentioned here are directly related to the complexity which may arise in decision trees and are normally tuned when growing trees. We'll shortly see this in action with a real dataset. 
 
 ## Additional Resources 
 - [Overview of Hyperparameter Tuning ](https://cloud.google.com/ml-engine/docs/tensorflow/hyperparameter-tuning-overview)
@@ -102,4 +102,4 @@ In addition of above, Scikit Learn offers a number of other parameters for furth
 
 ## Summary 
 
-In this lesson, we looked at the idea of hyper parameters optimization and how pruning plays an important role in restricting the growth of a decision tree , for our predictions to be accurate. We looked at a few hyper parameters which directly impact the potential over-fitting/underfitting in trees. Next we shall see these in prctice using scikit learn and python.  
+In this lesson, we looked at the idea of hyper parameters optimization and how pruning plays an important role in restricting the growth of a decision tree , for our predictions to be accurate. We looked at a few hyper parameters which directly impact the potential over-fitting/underfitting in trees. Next we'll see these in prctice using scikit-learn and python.  
