@@ -21,9 +21,9 @@ In this lesson we'll look at these sorts of optimizations in context of decision
 
 ## Tree Pruning
 
-Now that we know how to grow a decision tree using python and scikit learn, let's move on and practice with the idea of __Optimization__ of the classifer. This means that we have some options available with decision trees that we can tweak before the actual learning takes place. 
+Now that we know how to grow a decision tree using python and scikit-learn, let's move on and practice with the idea of __Optimization__ of the classifier. This means that we have some options available with decision trees that we can tweak before the actual learning takes place. 
 
-A decision tree , grown beyond a certain level of complexity leads to over-fitting. If we grow our tree and carry on using poor predictors which dont have any impact on the accuracy will eventually a) slow down the learning,  and b) cause overfitting. 
+A decision tree , grown beyond a certain level of complexity leads to over-fitting. If we grow our tree and carry on using poor predictors which don't have any impact on the accuracy will eventually a) slow down the learning,  and b) cause overfitting. 
 
 > __This process of trimming decision trees to optimize the learning process is called "Tree Pruning".__
 
@@ -58,10 +58,10 @@ The parameter for decision trees that we normally tune first is `max_depth`. Thi
 
 If, on the other hand, the tree is too shallow, we may run into __underfitting__, i.e. we are not learning enough information about the data and the accuracy of model stays low for both test and training samples . We fit a decision tree with depths ranging from 1 to 32 and plot the training and test auc scores.
 
-<img src="images/depth.png" width=400>
+<img src="images/depth.png" width="400">
 
 
-In above example, we see that as the tree depth increases, our validation/test accuracy starts to go down after a depth of around 4. But with even greater depths, the training accuracy keeps on rising , as the classifer learns more information from the data , but this can not be mapped onto unseen examples, hence the validation accuracy falls down constantly. Finding the sweet spot (e.g. depth=4) in this case would be the first hyper parameter that we need to tune. 
+In above example, we see that as the tree depth increases, our validation/test accuracy starts to go down after a depth of around 4. But with even greater depths, the training accuracy keeps on rising , as the classifier learns more information from the data , but this can not be mapped onto unseen examples, hence the validation accuracy falls down constantly. Finding the sweet spot (e.g. depth=4) in this case would be the first hyper parameter that we need to tune. 
 
 ## `min_samples_split`
 The hyper parameter `min_samples_split` is used to set the __minimum number of samples required to split an internal node__. This can vary between two extremes i.e. considering only one sample at each node vs. considering all of the samples at each node - for a given attribute. 
@@ -102,4 +102,4 @@ In addition of above, Scikit Learn offers a number of other parameters for furth
 
 ## Summary 
 
-In this lesson, we looked at the idea of hyper parameters optimization and how pruning plays an important role in restricting the growth of a decision tree , for our predictions to be accurate. We looked at a few hyper parameters which directly impact the potential over-fitting/underfitting in trees. Next we'll see these in prctice using scikit-learn and python.  
+In this lesson, we looked at the idea of hyper parameters optimization and how pruning plays an important role in restricting the growth of a decision tree , for our predictions to be accurate. We looked at a few hyper parameters which directly impact the potential over-fitting/underfitting in trees. Next we'll see these in practice using scikit-learn and python.  
