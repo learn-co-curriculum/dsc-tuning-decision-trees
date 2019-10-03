@@ -23,7 +23,7 @@ In this lesson we'll look at these sorts of optimizations in context of decision
 
 Now that we know how to grow a decision tree using python and scikit-learn, let's move on and practice with the idea of __Optimization__ of the classifier. This means that we have some options available with decision trees that we can tweak before the actual learning takes place. 
 
-A decision tree , grown beyond a certain level of complexity leads to over-fitting. If we grow our tree and carry on using poor predictors which don't have any impact on the accuracy will eventually a) slow down the learning,  and b) cause overfitting. 
+A decision tree, grown beyond a certain level of complexity leads to over-fitting. If we grow our tree and carry on using poor predictors which don't have any impact on the accuracy will eventually a) slow down the learning,  and b) cause overfitting.  Different tree pruning parameters can adjust the amount of overfitting or underfitting in order to optimize for increased accuracy, precision, and/or recall.
 
 > __This process of trimming decision trees to optimize the learning process is called "Tree Pruning".__
 
@@ -73,7 +73,7 @@ When we increase this parameter value, the tree becomes more constrained as it h
 
 In the above plot, we see that the training and testing accuracy stabilize at certain min. sample split size , and stays the same even if we carry on increasing the size of the split. This means that we will have a complex model, with similar accuracy that a much simpler model could potentially exhibit. Therefore, it is imperative that we try to identify the optimal sample size during the training phase. 
 
-` max_dapth` and `min_samples+splt` are also both related to the computational cost involved with growing the tree. nLarge values for these parameters can create a complex, dense and long tree and with large datasets, it may become extremely time consuming to use default values.  
+` max_depth` and `min_samples_split` are also both related to the computational cost involved with growing the tree. Large values for these parameters can create a complex, dense and long tree and with large datasets, it may become extremely time consuming to use default values.  
 
 
 
@@ -103,3 +103,8 @@ In addition of above, Scikit Learn offers a number of other parameters for furth
 ## Summary 
 
 In this lesson, we looked at the idea of hyper parameters optimization and how pruning plays an important role in restricting the growth of a decision tree , for our predictions to be accurate. We looked at a few hyper parameters which directly impact the potential over-fitting/underfitting in trees. Next we'll see these in practice using scikit-learn and python.  
+
+
+```python
+
+```
