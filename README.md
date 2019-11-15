@@ -8,7 +8,7 @@ Hyperparameter tuning relates to how we sample candidate model architectures fro
 ## Objectives 
 
 - Identify the role of pruning while training decision trees  
-- List the different hyperparameters for pruning decision trees 
+- List the different hyperparameters for tuning decision trees 
 
 ## Hyperparameter Optimization
 
