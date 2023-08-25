@@ -1,4 +1,3 @@
-
 # Hyperparameter Tuning and Pruning in Decision Trees
 
 ## Introduction
@@ -49,7 +48,7 @@ Generally speaking, a low training error but a large testing error is a strong i
 
 If, on the other hand, the tree is too shallow, we may run into __underfitting__, i.e., we are not learning enough information about the data and the accuracy of the model stays low for both the test and training samples. The following example shows the training and test AUC scores for a decision tree with depths ranging from 1 to 32.
 
-<img src="images/depth.png" width="400">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/depth.png" width="400">
 
 
 In the above example, we see that as the tree depth increases, our validation/test accuracy starts to go down after a depth of around 4. But with even greater depths, the training accuracy keeps on rising, as the classifier learns more information from the data. However this information can not be mapped onto unseen examples, hence the validation accuracy falls down constantly. Finding the sweet spot (e.g. depth = 4) in this case would be the first hyperparameter that we need to tune. 
@@ -60,7 +59,7 @@ The hyperparameter `min_samples_split` is used to set the __minimum number of sa
 
 When we increase this parameter value, the tree becomes more constrained as it has to consider more samples at each node. Here we will vary the parameter from 10% to 100% of the samples.
 
-<img src="images/split.png" width=500>
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/split.png" width=500>
 
 
 In the above plot, we see that the training and test accuracy stabilize at a certain minimum sample split size, and stays the same even if we carry on increasing the size of the split. This means that we will have a complex model, with similar accuracy than a much simpler model could potentially exhibit. Therefore, it is imperative that we try to identify the optimal sample size during the training phase. 
@@ -73,7 +72,7 @@ In the above plot, we see that the training and test accuracy stabilize at a cer
 
 This hyperparameter is used to identify the minimum number of samples that we want a leaf node to contain. When this minimum size is achieved at a node, it does not get split any further.  This parameter is similar to `min_samples_splits`, however, this describes the minimum number of samples at the leaves, the base of the tree.
 
-<img src="images/leaf.png" width=400>
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/leaf.png" width=400>
 
 
 
